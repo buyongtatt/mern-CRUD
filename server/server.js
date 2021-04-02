@@ -2,9 +2,13 @@ import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
+import studentRoutes from "./routes/student.js";
 
 dotenv.config();
+
 const app = express();
+
+app.use("/students", studentRoutes);
 
 app.use(
   express.json({
