@@ -8,8 +8,6 @@ dotenv.config();
 
 const app = express();
 
-app.use("/students", studentRoutes);
-
 app.use(
   express.json({
     limit: "20mb",
@@ -41,3 +39,5 @@ mongoose
   .catch((err) => console.log(err.message));
 
 mongoose.set("useFindAndModify", false);
+
+app.use("/students", studentRoutes);
